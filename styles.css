@@ -1,18 +1,18 @@
 :root {
-  --charcoal: #111315;
-  --charcoal-soft: #151718;
+  --cf-charcoal: #111315;
+  --cf-basalt: #2c3539;
+  --cf-panel: #1b1d1e;
+  --cf-parchment: #f5f0e6;
+  --cf-stone: #e6ded0;
+  --cf-cream: #fff7e8;
+  --cf-gold: #c7a56a;
+  --cf-sand: #d8bc82;
+  --cf-muted-gold: #a98245;
+  --cf-border-dark: rgba(255, 247, 232, 0.12);
+  --cf-border-light: rgba(44, 53, 57, 0.14);
   --ink: #171717;
-  --off-white: #f7f3ec;
-  --warm-white: #f5f1ea;
-  --stone: #e8e1d6;
-  --stone-dark: #cec4b7;
-  --sage: #8fa98b;
-  --sage-dark: #5f765e;
-  --bronze: #b08d57;
-  --muted-on-dark: rgba(247, 243, 236, 0.76);
+  --muted-on-dark: rgba(255, 247, 232, 0.76);
   --muted-on-light: rgba(23, 23, 23, 0.68);
-  --border-dark: rgba(247, 243, 236, 0.16);
-  --border-light: rgba(17, 19, 21, 0.12);
   --shadow-soft: 0 18px 42px rgba(17, 19, 21, 0.12);
 }
 
@@ -26,7 +26,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--warm-white);
+  background: var(--cf-parchment);
   color: var(--ink);
   font-family: "Inter", Arial, sans-serif;
   font-size: 17px;
@@ -70,7 +70,7 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(176, 141, 87, 0.72);
+  outline: 3px solid rgba(199, 165, 106, 0.72);
   outline-offset: 3px;
 }
 
@@ -79,7 +79,7 @@ select {
   left: 16px;
   top: -80px;
   z-index: 10;
-  background: var(--off-white);
+  background: var(--cf-cream);
   color: var(--ink);
   padding: 10px 14px;
   border-radius: 8px;
@@ -101,22 +101,22 @@ select {
 }
 
 .section-light {
-  background: var(--warm-white);
+  background: var(--cf-parchment);
   color: var(--ink);
 }
 
 .section-stone {
-  background: var(--stone);
+  background: var(--cf-stone);
   color: var(--ink);
 }
 
 .section-dark {
-  background: var(--charcoal);
-  color: var(--off-white);
+  background: var(--cf-charcoal);
+  color: var(--cf-cream);
 }
 
 .eyebrow {
-  color: var(--bronze);
+  color: var(--cf-muted-gold);
   font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
@@ -125,7 +125,7 @@ select {
 
 .section-dark .eyebrow,
 .hero .eyebrow {
-  color: var(--sage);
+  color: var(--cf-sand);
 }
 
 h1,
@@ -136,7 +136,7 @@ h2 {
 
 h1 {
   max-width: 720px;
-  color: var(--off-white);
+  color: var(--cf-cream);
   font-size: 68px;
   line-height: 1.02;
 }
@@ -213,34 +213,36 @@ h3 {
 }
 
 .button-primary {
-  background: var(--sage);
-  color: var(--charcoal);
-  box-shadow: 0 14px 32px rgba(143, 169, 139, 0.22);
+  border-color: rgba(255, 247, 232, 0.2);
+  background: var(--cf-sand);
+  color: var(--cf-charcoal);
+  box-shadow: 0 14px 28px rgba(216, 188, 130, 0.16);
 }
 
 .button-primary:hover {
-  background: #9bb693;
-  box-shadow: 0 18px 40px rgba(143, 169, 139, 0.28);
+  transform: translateY(-1px);
+  background: var(--cf-gold);
+  box-shadow: 0 16px 32px rgba(199, 165, 106, 0.18);
 }
 
 .button-secondary {
-  color: var(--off-white);
-  border-color: rgba(247, 243, 236, 0.44);
-  background: rgba(247, 243, 236, 0.05);
+  color: var(--cf-cream);
+  border-color: rgba(255, 247, 232, 0.42);
+  background: rgba(255, 247, 232, 0.05);
 }
 
 .button-secondary:hover {
-  border-color: var(--sage);
-  background: rgba(143, 169, 139, 0.12);
+  border-color: var(--cf-sand);
+  background: rgba(216, 188, 130, 0.1);
 }
 
 /* Header */
 .site-header {
   position: relative;
   z-index: 2;
-  background: var(--charcoal);
-  border-bottom: 1px solid var(--border-dark);
-  color: var(--off-white);
+  background: var(--cf-charcoal);
+  border-bottom: 1px solid var(--cf-border-dark);
+  color: var(--cf-cream);
 }
 
 .nav-shell {
@@ -254,21 +256,13 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  font-weight: 700;
+  flex: 0 0 auto;
 }
 
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(143, 169, 139, 0.46);
-  border-radius: 50%;
-  color: var(--sage);
-  font-size: 13px;
+.brand img {
+  width: auto;
+  height: 42px;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -281,14 +275,14 @@ h3 {
 }
 
 .nav-links a:hover {
-  color: var(--off-white);
+  color: var(--cf-cream);
 }
 
 .nav-cta {
   padding: 8px 14px;
-  border: 1px solid rgba(143, 169, 139, 0.5);
+  border: 1px solid rgba(216, 188, 130, 0.48);
   border-radius: 999px;
-  color: var(--off-white);
+  color: var(--cf-cream);
 }
 
 /* Hero Section */
@@ -351,10 +345,10 @@ h3 {
   min-height: 64px;
   display: flex;
   align-items: center;
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--cf-border-dark);
   border-radius: 8px;
   background: rgba(17, 19, 21, 0.42);
-  color: var(--off-white);
+  color: var(--cf-cream);
   padding: 13px 16px;
   font-size: 14px;
   font-weight: 700;
@@ -384,9 +378,9 @@ h3 {
 .process-step,
 .client-card,
 .proof-card {
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--cf-border-light);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 247, 232, 0.52);
   box-shadow: var(--shadow-soft);
 }
 
@@ -413,22 +407,22 @@ h3 {
   min-height: 430px;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--cf-border-dark);
   border-radius: 8px;
   padding: 30px;
 }
 
 .comparison-muted {
-  background: rgba(247, 243, 236, 0.05);
+  background: var(--cf-panel);
 }
 
 .comparison-accent {
-  background: linear-gradient(180deg, rgba(143, 169, 139, 0.18), rgba(143, 169, 139, 0.08));
-  border-color: rgba(143, 169, 139, 0.48);
+  background: linear-gradient(180deg, rgba(216, 188, 130, 0.16), rgba(27, 29, 30, 0.96));
+  border-color: rgba(216, 188, 130, 0.38);
 }
 
 .comparison-topline {
-  color: var(--bronze);
+  color: var(--cf-gold);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -461,21 +455,21 @@ h3 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--bronze);
+  background: var(--cf-muted-gold);
 }
 
 .comparison-accent .comparison-list li::before {
-  background: var(--sage);
+  background: var(--cf-sand);
 }
 
 .baseline-line {
   margin-top: 24px;
   padding: 20px 24px;
-  border: 1px solid rgba(176, 141, 87, 0.35);
+  border: 1px solid rgba(216, 188, 130, 0.32);
   border-radius: 8px;
-  color: var(--off-white);
+  color: var(--cf-cream);
   font-weight: 700;
-  background: rgba(176, 141, 87, 0.08);
+  background: rgba(216, 188, 130, 0.08);
 }
 
 /* Method / Framework Section */
@@ -494,7 +488,7 @@ h3 {
 .pillar-number {
   display: inline-block;
   margin-bottom: 36px;
-  color: var(--sage-dark);
+  color: var(--cf-muted-gold);
   font-size: 13px;
   font-weight: 800;
 }
@@ -526,8 +520,8 @@ h3 {
   height: 42px;
   margin-bottom: 28px;
   border-radius: 50%;
-  background: var(--charcoal);
-  color: var(--sage);
+  background: var(--cf-charcoal);
+  color: var(--cf-gold);
   font-size: 13px;
   font-weight: 800;
 }
@@ -541,9 +535,9 @@ h3 {
 .clinical-note {
   margin-top: 28px;
   padding: 20px 22px;
-  border-left: 3px solid var(--bronze);
+  border-left: 3px solid var(--cf-gold);
   border-radius: 8px;
-  background: rgba(176, 141, 87, 0.1);
+  background: rgba(199, 165, 106, 0.12);
   color: rgba(23, 23, 23, 0.76);
   font-size: 15px;
 }
@@ -560,9 +554,9 @@ h3 {
   min-height: 128px;
   display: flex;
   align-items: flex-end;
-  border-color: var(--border-dark);
-  background: rgba(247, 243, 236, 0.06);
-  color: var(--off-white);
+  border-color: var(--cf-border-dark);
+  background: var(--cf-panel);
+  color: var(--cf-cream);
   padding: 22px;
   box-shadow: none;
   font-weight: 700;
@@ -572,9 +566,9 @@ h3 {
 .not-for {
   margin-top: 24px;
   padding: 26px;
-  border: 1px solid rgba(176, 141, 87, 0.34);
+  border: 1px solid rgba(216, 188, 130, 0.3);
   border-radius: 8px;
-  background: rgba(176, 141, 87, 0.08);
+  background: rgba(216, 188, 130, 0.08);
 }
 
 .not-for p:last-child {
@@ -598,9 +592,9 @@ h3 {
   gap: 12px;
   min-height: 64px;
   padding: 18px 20px;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--cf-border-light);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.36);
+  background: rgba(255, 247, 232, 0.56);
   font-weight: 650;
 }
 
@@ -609,9 +603,9 @@ h3 {
   width: 22px;
   height: 22px;
   margin-top: 2px;
-  border: 1px solid rgba(95, 118, 94, 0.55);
+  border: 1px solid rgba(169, 130, 69, 0.55);
   border-radius: 50%;
-  background: rgba(143, 169, 139, 0.18);
+  background: rgba(199, 165, 106, 0.18);
 }
 
 .included-item span::after {
@@ -621,7 +615,7 @@ h3 {
   top: 4px;
   width: 6px;
   height: 10px;
-  border: solid var(--sage-dark);
+  border: solid var(--cf-muted-gold);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -646,7 +640,7 @@ h3 {
 }
 
 .placeholder-label {
-  color: var(--sage-dark);
+  color: var(--cf-muted-gold);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -656,8 +650,8 @@ h3 {
 .final-cta {
   background:
     linear-gradient(135deg, rgba(17, 19, 21, 0.98), rgba(21, 23, 24, 0.96)),
-    var(--charcoal);
-  color: var(--off-white);
+    var(--cf-charcoal);
+  color: var(--cf-cream);
 }
 
 .application-layout {
@@ -675,9 +669,9 @@ h3 {
   display: grid;
   gap: 16px;
   padding: 28px;
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--cf-border-dark);
   border-radius: 8px;
-  background: rgba(247, 243, 236, 0.07);
+  background: var(--cf-panel);
 }
 
 .form-row {
@@ -686,7 +680,7 @@ h3 {
 }
 
 .form-row label {
-  color: var(--off-white);
+  color: var(--cf-cream);
   font-size: 14px;
   font-weight: 700;
 }
@@ -695,10 +689,10 @@ h3 {
 .form-row textarea,
 .form-row select {
   min-height: 48px;
-  border: 1px solid rgba(247, 243, 236, 0.2);
+  border: 1px solid rgba(255, 247, 232, 0.2);
   border-radius: 8px;
-  background: rgba(247, 243, 236, 0.1);
-  color: var(--off-white);
+  background: rgba(255, 247, 232, 0.1);
+  color: var(--cf-cream);
   padding: 11px 13px;
 }
 
@@ -726,7 +720,7 @@ h3 {
 .site-footer {
   background: #0c0e0f;
   color: var(--muted-on-dark);
-  border-top: 1px solid rgba(247, 243, 236, 0.12);
+  border-top: 1px solid var(--cf-border-dark);
 }
 
 .footer-shell {
@@ -738,8 +732,24 @@ h3 {
   font-size: 14px;
 }
 
+.footer-shell p {
+  display: grid;
+  gap: 2px;
+}
+
+.footer-shell strong {
+  color: var(--cf-cream);
+}
+
+.footer-shell span {
+  color: var(--cf-gold);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .footer-shell a {
-  color: var(--sage);
+  color: var(--cf-sand);
   font-weight: 700;
 }
 
@@ -870,8 +880,8 @@ h3 {
     font-size: 13px;
   }
 
-  .brand {
-    font-size: 14px;
+  .brand img {
+    height: 34px;
   }
 
   h1 {
