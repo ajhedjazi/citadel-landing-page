@@ -154,7 +154,7 @@ h3 {
 }
 
 .section-heading {
-  max-width: 760px;
+  max-width: 1160px;
 }
 
 .section-heading .eyebrow,
@@ -167,6 +167,11 @@ h3 {
 .section-lead h2,
 .application-copy h2 {
   margin-bottom: 20px;
+}
+
+.section-heading h2,
+.section-heading p:not(.eyebrow) {
+  max-width: 760px;
 }
 
 .section-heading p:not(.eyebrow),
@@ -753,6 +758,63 @@ h3 {
   font-weight: 700;
 }
 
+/* Floating Actions */
+.floating-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 20;
+  display: grid;
+  gap: 12px;
+  justify-items: end;
+  pointer-events: none;
+}
+
+.floating-action {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 247, 232, 0.2);
+  border-radius: 999px;
+  background: var(--cf-sand);
+  color: var(--cf-charcoal);
+  box-shadow: 0 14px 30px rgba(17, 19, 21, 0.2);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.floating-action.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-action:hover {
+  background: var(--cf-gold);
+  box-shadow: 0 16px 34px rgba(17, 19, 21, 0.24);
+  transform: translateY(-1px);
+}
+
+.floating-action--whatsapp {
+  min-width: 122px;
+  padding: 0 20px;
+}
+
+.floating-action--top {
+  width: 52px;
+  padding: 0;
+  appearance: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
 @media (max-width: 1080px) {
   h1 {
     font-size: 58px;
@@ -951,5 +1013,28 @@ h3 {
     align-items: flex-start;
     justify-content: center;
     padding: 18px 0;
+  }
+
+  .floating-actions {
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .floating-action {
+    min-height: 44px;
+    box-shadow: 0 12px 24px rgba(17, 19, 21, 0.18);
+  }
+
+  .floating-action--whatsapp {
+    min-width: 102px;
+    padding: 0 14px;
+  }
+
+  .floating-action--top {
+    width: 44px;
+    font-size: 21px;
   }
 }

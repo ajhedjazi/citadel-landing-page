@@ -25,3 +25,25 @@ if (applicationForm && formStatus) {
     applicationForm.reset();
   });
 }
+
+const floatingActions = document.querySelectorAll(".floating-action");
+const backToTopButton = document.querySelector(".floating-action--top");
+
+const toggleFloatingActions = () => {
+  const shouldShow = window.scrollY > 300;
+
+  floatingActions.forEach((action) => {
+    action.classList.toggle("is-visible", shouldShow);
+  });
+};
+
+if (floatingActions.length) {
+  window.addEventListener("scroll", toggleFloatingActions, { passive: true });
+  toggleFloatingActions();
+}
+
+if (backToTopButton) {
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
