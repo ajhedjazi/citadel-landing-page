@@ -26,6 +26,10 @@
   --muted-on-dark: rgba(var(--brand-white-rgb), 0.78);
   --muted-on-light: rgba(var(--brand-navy-rgb), 0.68);
   --shadow-soft: 0 18px 42px rgba(var(--brand-navy-rgb), 0.1);
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --footer-card-padding: var(--space-md);
 }
 
 * {
@@ -500,8 +504,7 @@ h3 {
   padding: 28px;
 }
 
-.service-card ul,
-.review-card p {
+.service-card ul {
   margin-top: 22px;
 }
 
@@ -533,7 +536,7 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 0.56fr) minmax(0, 1fr);
   gap: 48px;
-  align-items: start;
+  align-items: center;
 }
 
 .reviews-layout .button {
@@ -542,23 +545,26 @@ h3 {
 
 .review-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  align-items: stretch;
 }
 
 .review-card {
   min-height: 210px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   border-color: rgba(var(--brand-white-rgb), 0.24);
   background: rgba(var(--brand-white-rgb), 0.08);
-  padding: 26px;
+  padding: var(--space-md);
 }
 
 .review-card p {
+  margin: 0;
   color: var(--cf-cream);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.16;
 }
 
 .enquiry-layout {
@@ -651,7 +657,7 @@ h3 {
       320px,
       1.08fr
     );
-  gap: 22px;
+  gap: var(--space-md);
   align-items: stretch;
 }
 
@@ -661,15 +667,15 @@ h3 {
   border: 1px solid var(--cf-border-dark);
   border-radius: 8px;
   background: rgba(var(--brand-white-rgb), 0.055);
+  padding: var(--footer-card-padding);
   box-shadow: 0 18px 40px rgba(var(--brand-navy-rgb), 0.22);
 }
 
 .footer-brand-panel {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 24px;
+  justify-content: center;
+  gap: var(--space-lg);
 }
 
 .footer-logo {
@@ -690,7 +696,7 @@ h3 {
 }
 
 .footer-brand-panel p {
-  max-width: 280px;
+  max-width: 300px;
   color: var(--cf-cream);
   font-family: "Playfair Display", Georgia, serif;
   font-size: 26px;
@@ -700,9 +706,8 @@ h3 {
 
 .footer-contact {
   display: grid;
-  gap: 18px;
-  align-content: start;
-  padding: 24px;
+  gap: var(--space-sm);
+  align-content: center;
   font-style: normal;
 }
 
@@ -716,7 +721,7 @@ h3 {
 
 .footer-list {
   display: grid;
-  gap: 16px;
+  gap: var(--space-sm);
   list-style: none;
 }
 
@@ -749,10 +754,9 @@ h3 {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 22px;
+  gap: var(--space-md);
   align-items: center;
   overflow: hidden;
-  padding: 22px;
 }
 
 .footer-review-card::before {
@@ -770,7 +774,7 @@ h3 {
 
 .footer-review-copy {
   display: grid;
-  gap: 10px;
+  gap: 0.75rem;
   align-content: center;
 }
 
@@ -791,7 +795,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4px;
+  margin-top: 0.25rem;
   border: 1px solid rgba(var(--brand-silver-rgb), 0.62);
   border-radius: 999px;
   color: var(--cf-cream);
