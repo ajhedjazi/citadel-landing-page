@@ -428,6 +428,15 @@ h3 {
   align-self: center;
 }
 
+.about-copy {
+  display: grid;
+  gap: 16px;
+}
+
+.about-copy h2 {
+  margin-bottom: 4px;
+}
+
 .about-card,
 .service-card,
 .review-card,
@@ -446,6 +455,15 @@ h3 {
 .about-card p {
   margin-top: 14px;
   color: var(--muted-on-light);
+}
+
+.about-detail {
+  display: grid;
+  gap: 14px;
+}
+
+.about-detail p {
+  margin-top: 0;
 }
 
 .image-panel {
@@ -481,6 +499,10 @@ h3 {
 .about-image {
   grid-column: 2;
   grid-row: 1 / span 2;
+}
+
+.about-image img {
+  object-position: center top;
 }
 
 .section-heading {
