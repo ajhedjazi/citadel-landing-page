@@ -1,31 +1,36 @@
 :root {
-  --brand-blue: #1A3EB9;
-  --brand-blue-rgb: 26, 62, 185;
-  --brand-navy: #07123A;
-  --brand-navy-rgb: 7, 18, 58;
+  /* Citadel Fitness colour palette */
+  --brand-yellow: #FFD21F;
+  --brand-yellow-rgb: 255, 210, 31;
+  --brand-blue: #0077B6;
+  --brand-blue-rgb: 0, 119, 182;
+  --brand-grey: #BFBFBF;
+  --brand-grey-rgb: 191, 191, 191;
+  --brand-slate: #2F414B;
+  --brand-slate-rgb: 47, 65, 75;
   --brand-white: #FFFFFF;
   --brand-white-rgb: 255, 255, 255;
-  --brand-soft: #F7F8FC;
-  --brand-silver: #C7CCD8;
-  --brand-silver-rgb: 199, 204, 216;
-  --brand-silver-dark: #8F98AA;
-  --brand-silver-dark-rgb: 143, 152, 170;
-  --chrome-gradient: linear-gradient(135deg, #F2F4F8, #AEB6C7, #FFFFFF, #8F98AA);
-  --cf-charcoal: var(--brand-navy);
-  --cf-panel: rgba(var(--brand-navy-rgb), 0.94);
+  --brand-soft: #F2F2F2;
+  --accent-gradient: linear-gradient(
+    90deg,
+    var(--brand-yellow),
+    rgba(var(--brand-yellow-rgb), 0.18)
+  );
+  --cf-charcoal: var(--brand-slate);
+  --cf-panel: rgba(var(--brand-slate-rgb), 0.94);
   --cf-basalt: var(--brand-blue);
   --cf-parchment: var(--brand-soft);
   --cf-stone: var(--brand-white);
   --cf-cream: var(--brand-white);
-  --cf-gold: var(--brand-blue);
-  --cf-sand: var(--brand-silver);
-  --cf-muted-gold: var(--brand-blue);
-  --cf-border-dark: rgba(var(--brand-white-rgb), 0.22);
-  --cf-border-light: rgba(var(--brand-silver-dark-rgb), 0.26);
-  --ink: var(--brand-navy);
-  --muted-on-dark: rgba(var(--brand-white-rgb), 0.78);
-  --muted-on-light: rgba(var(--brand-navy-rgb), 0.68);
-  --shadow-soft: 0 18px 42px rgba(var(--brand-navy-rgb), 0.1);
+  --cf-gold: var(--brand-yellow);
+  --cf-sand: var(--brand-grey);
+  --cf-muted-gold: var(--brand-yellow);
+  --cf-border-dark: rgba(var(--brand-grey-rgb), 0.3);
+  --cf-border-light: rgba(var(--brand-grey-rgb), 0.72);
+  --ink: var(--brand-slate);
+  --muted-on-dark: rgba(var(--brand-white-rgb), 0.98);
+  --muted-on-light: rgba(var(--brand-slate-rgb), 0.78);
+  --shadow-soft: 0 18px 42px rgba(var(--brand-slate-rgb), 0.12);
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
@@ -86,8 +91,16 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(var(--brand-blue-rgb), 0.48);
+  outline: 3px solid var(--brand-blue);
   outline-offset: 3px;
+}
+
+.site-header :focus-visible,
+.hero :focus-visible,
+.section-dark :focus-visible,
+.enquiry-form :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--brand-yellow);
 }
 
 .skip-link {
@@ -95,7 +108,7 @@ select {
   top: -80px;
   left: 16px;
   z-index: 100;
-  border: 1px solid var(--brand-silver);
+  border: 1px solid var(--brand-grey);
   border-radius: 8px;
   background: var(--cf-cream);
   color: var(--ink);
@@ -128,8 +141,12 @@ select {
 .section-dark {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(var(--brand-navy-rgb), 0.08), transparent 52%),
-    var(--brand-blue);
+    linear-gradient(
+      135deg,
+      var(--brand-slate) 0%,
+      var(--brand-slate) 34%,
+      var(--brand-blue) 100%
+    );
   color: var(--cf-cream);
 }
 
@@ -138,7 +155,7 @@ select {
   position: absolute;
   inset: 0 0 auto;
   height: 1px;
-  background: var(--chrome-gradient);
+  background: var(--accent-gradient);
   opacity: 0.62;
   pointer-events: none;
 }
@@ -155,7 +172,7 @@ select {
 
 .section-dark .eyebrow,
 .hero .eyebrow {
-  color: var(--brand-silver);
+  color: var(--brand-yellow);
 }
 
 h1,
@@ -207,7 +224,7 @@ h3 {
   top: 0;
   z-index: 30;
   border-bottom: 1px solid var(--cf-border-dark);
-  background: rgba(var(--brand-blue-rgb), 0.94);
+  background: rgba(var(--brand-slate-rgb), 0.95);
   color: var(--cf-cream);
   backdrop-filter: blur(14px);
   transition:
@@ -216,8 +233,8 @@ h3 {
 }
 
 .site-header.is-scrolled {
-  background: rgba(var(--brand-blue-rgb), 0.98);
-  box-shadow: 0 14px 32px rgba(var(--brand-navy-rgb), 0.22);
+  background: rgba(var(--brand-slate-rgb), 0.99);
+  box-shadow: 0 14px 32px rgba(var(--brand-slate-rgb), 0.26);
 }
 
 .nav-shell {
@@ -260,7 +277,7 @@ h3 {
 
 .nav-links a:hover,
 .nav-links a.is-active {
-  color: var(--cf-cream);
+  color: var(--brand-yellow);
 }
 
 .nav-links a::after {
@@ -271,7 +288,7 @@ h3 {
   left: 0;
   height: 2px;
   border-radius: 999px;
-  background: var(--brand-silver);
+  background: var(--brand-yellow);
   opacity: 0;
   transform: scaleX(0.6);
   transition:
@@ -285,13 +302,13 @@ h3 {
 }
 
 .nav-cta {
-  border: 1px solid rgba(var(--brand-silver-rgb), 0.62);
+  border: 1px solid rgba(var(--brand-yellow-rgb), 0.72);
   border-radius: 999px;
   padding: 8px 14px;
 }
 
 .nav-cta.is-active {
-  background: rgba(var(--brand-white-rgb), 0.12);
+  background: rgba(var(--brand-yellow-rgb), 0.12);
 }
 
 .hero {
@@ -305,9 +322,9 @@ h3 {
   background:
     linear-gradient(
       90deg,
-      rgba(var(--brand-blue-rgb), 0.96) 0%,
-      rgba(var(--brand-blue-rgb), 0.84) 48%,
-      rgba(var(--brand-navy-rgb), 0.24) 100%
+      rgba(var(--brand-slate-rgb), 0.98) 0%,
+      rgba(var(--brand-blue-rgb), 0.9) 48%,
+      rgba(var(--brand-slate-rgb), 0.24) 100%
     ),
     url("assets/diagnostic-coaching-hero.png") center right / cover no-repeat;
 }
@@ -318,7 +335,7 @@ h3 {
   inset: 0 0 auto;
   z-index: 1;
   height: 3px;
-  background: var(--chrome-gradient);
+  background: var(--accent-gradient);
   opacity: 0.68;
   pointer-events: none;
 }
@@ -329,7 +346,7 @@ h3 {
   inset: auto 0 0;
   z-index: 0;
   height: 38%;
-  background: linear-gradient(0deg, rgba(var(--brand-navy-rgb), 0.58), transparent);
+  background: linear-gradient(0deg, rgba(var(--brand-slate-rgb), 0.66), transparent);
   pointer-events: none;
 }
 
@@ -384,37 +401,38 @@ h3 {
 }
 
 .button-primary:hover {
-  border-color: var(--brand-navy);
-  background: var(--brand-navy);
-  box-shadow: 0 16px 32px rgba(var(--brand-navy-rgb), 0.18);
+  border-color: var(--brand-slate);
+  background: var(--brand-slate);
+  box-shadow: 0 16px 32px rgba(var(--brand-slate-rgb), 0.2);
 }
 
 .hero .button-primary,
 .section-dark .button-primary,
 .enquiry-form .button-primary {
-  border-color: rgba(var(--brand-white-rgb), 0.82);
-  background: var(--brand-white);
-  color: var(--brand-blue);
-  box-shadow: 0 16px 34px rgba(var(--brand-navy-rgb), 0.18);
+  border-color: var(--brand-yellow);
+  background: var(--brand-yellow);
+  color: var(--brand-slate);
+  box-shadow: 0 16px 34px rgba(var(--brand-slate-rgb), 0.22);
 }
 
 .hero .button-primary:hover,
 .section-dark .button-primary:hover,
 .enquiry-form .button-primary:hover {
   border-color: var(--brand-white);
-  background: var(--brand-soft);
-  color: var(--brand-navy);
+  background: var(--brand-white);
+  color: var(--brand-slate);
 }
 
 .button-secondary {
-  border-color: rgba(var(--brand-silver-rgb), 0.72);
+  border-color: rgba(var(--brand-grey-rgb), 0.8);
   background: rgba(var(--brand-white-rgb), 0.05);
   color: var(--cf-cream);
 }
 
 .button-secondary:hover {
-  border-color: var(--brand-white);
-  background: rgba(var(--brand-white-rgb), 0.12);
+  border-color: var(--brand-yellow);
+  background: rgba(var(--brand-yellow-rgb), 0.12);
+  color: var(--brand-yellow);
 }
 
 .about-cards-row {
@@ -470,8 +488,8 @@ h3 {
   border: 1px solid var(--cf-border-light);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(var(--brand-silver-rgb), 0.16), transparent),
-    var(--brand-navy);
+    linear-gradient(135deg, rgba(var(--brand-grey-rgb), 0.16), transparent),
+    var(--brand-slate);
   box-shadow: var(--shadow-soft);
 }
 
@@ -481,7 +499,7 @@ h3 {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(var(--brand-navy-rgb), 0.08),
+    rgba(var(--brand-slate-rgb), 0.08),
     rgba(var(--brand-blue-rgb), 0.24)
   );
   pointer-events: none;
@@ -543,7 +561,7 @@ h3 {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--brand-silver-dark);
+  background: var(--brand-yellow);
 }
 
 .reviews-layout {
@@ -567,8 +585,8 @@ h3 {
   min-height: 210px;
   display: flex;
   align-items: center;
-  border-color: rgba(var(--brand-white-rgb), 0.24);
-  background: rgba(var(--brand-white-rgb), 0.08);
+  border-color: rgba(var(--brand-grey-rgb), 0.46);
+  background: rgba(var(--brand-slate-rgb), 0.38);
   padding: var(--space-md);
 }
 
@@ -592,7 +610,7 @@ h3 {
   display: grid;
   gap: 16px;
   background:
-    linear-gradient(180deg, rgba(var(--brand-navy-rgb), 0.08), transparent),
+    linear-gradient(180deg, rgba(var(--brand-slate-rgb), 0.16), transparent),
     var(--brand-blue);
   color: var(--cf-cream);
   padding: 28px;
@@ -618,9 +636,9 @@ h3 {
 .form-row textarea,
 .form-row select {
   min-height: 48px;
-  border: 1px solid rgba(var(--brand-silver-rgb), 0.5);
+  border: 1px solid rgba(var(--brand-grey-rgb), 0.68);
   border-radius: 8px;
-  background: rgba(var(--brand-white-rgb), 0.1);
+  background: rgba(var(--brand-slate-rgb), 0.22);
   color: var(--cf-cream);
   padding: 11px 13px;
   transition:
@@ -633,9 +651,9 @@ h3 {
 .form-row textarea:focus,
 .form-row select:focus {
   outline: 0;
-  border-color: rgba(var(--brand-white-rgb), 0.86);
-  background: rgba(var(--brand-white-rgb), 0.15);
-  box-shadow: 0 0 0 4px rgba(var(--brand-silver-rgb), 0.18);
+  border-color: var(--brand-yellow);
+  background: rgba(var(--brand-slate-rgb), 0.32);
+  box-shadow: 0 0 0 4px rgba(var(--brand-yellow-rgb), 0.24);
 }
 
 .form-row textarea {
@@ -655,8 +673,8 @@ h3 {
 .site-footer {
   border-top: 1px solid var(--cf-border-dark);
   background:
-    linear-gradient(180deg, rgba(var(--brand-navy-rgb), 0.96), var(--brand-navy) 58%),
-    var(--brand-navy);
+    linear-gradient(180deg, rgba(var(--brand-slate-rgb), 0.96), var(--brand-slate) 58%),
+    var(--brand-slate);
   color: var(--muted-on-dark);
 }
 
@@ -682,7 +700,7 @@ h3 {
   border-radius: 8px;
   background: rgba(var(--brand-white-rgb), 0.055);
   padding: var(--footer-card-padding);
-  box-shadow: 0 18px 40px rgba(var(--brand-navy-rgb), 0.22);
+  box-shadow: 0 18px 40px rgba(var(--brand-slate-rgb), 0.24);
 }
 
 .footer-brand-panel {
@@ -726,7 +744,7 @@ h3 {
 }
 
 .footer-heading {
-  color: var(--brand-silver);
+  color: var(--brand-yellow);
   font-size: 12px;
   font-weight: 800;
   line-height: 1.2;
@@ -755,13 +773,13 @@ h3 {
 }
 
 .footer-list a {
-  color: var(--brand-silver);
+  color: var(--brand-grey);
   font-weight: 700;
   overflow-wrap: anywhere;
 }
 
 .footer-list a:hover {
-  color: var(--brand-white);
+  color: var(--brand-yellow);
 }
 
 .footer-review-card {
@@ -777,7 +795,7 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--chrome-gradient);
+  background: var(--accent-gradient);
   opacity: 0.1;
   pointer-events: none;
 }
@@ -810,7 +828,7 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-top: 0.25rem;
-  border: 1px solid rgba(var(--brand-silver-rgb), 0.62);
+  border: 1px solid rgba(var(--brand-yellow-rgb), 0.72);
   border-radius: 999px;
   color: var(--cf-cream);
   padding: 10px 18px;
@@ -823,19 +841,19 @@ h3 {
 }
 
 .footer-review-link:hover {
-  border-color: var(--brand-white);
-  background: rgba(var(--brand-white-rgb), 0.12);
-  color: var(--cf-cream);
+  border-color: var(--brand-yellow);
+  background: var(--brand-yellow);
+  color: var(--brand-slate);
 }
 
 .footer-qr-wrap {
   display: grid;
   place-items: center;
-  border: 1px solid rgba(var(--brand-silver-rgb), 0.58);
+  border: 1px solid rgba(var(--brand-grey-rgb), 0.72);
   border-radius: 8px;
   background: var(--cf-cream);
   padding: 12px;
-  box-shadow: inset 0 0 0 1px rgba(var(--brand-navy-rgb), 0.08);
+  box-shadow: inset 0 0 0 1px rgba(var(--brand-slate-rgb), 0.08);
 }
 
 .footer-qr-wrap img {
@@ -950,8 +968,8 @@ h3 {
     background:
       linear-gradient(
         180deg,
-        rgba(var(--brand-blue-rgb), 0.48) 0%,
-        rgba(var(--brand-blue-rgb), 0.95) 62%
+        rgba(var(--brand-slate-rgb), 0.34) 0%,
+        rgba(var(--brand-blue-rgb), 0.96) 62%
       ),
       url("assets/diagnostic-coaching-hero.png") center top / cover no-repeat;
   }
