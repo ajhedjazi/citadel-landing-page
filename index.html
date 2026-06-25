@@ -11,14 +11,38 @@
     <meta name="theme-color" content="#07123A" />
     <!-- TODO: Replace placeholder domain with the real Citadel Fitness domain before launch. -->
     <link rel="canonical" href="https://www.citadelfitness.example/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+    <link rel="icon" href="assets/favicon.png" sizes="48x48" type="image/png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      href="assets/hero-mobile.avif"
+      type="image/avif"
+      media="(max-width: 720px)"
+      fetchpriority="high"
     />
-    <link rel="preload" as="image" href="assets/diagnostic-coaching-hero.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/hero-desktop.avif"
+      type="image/avif"
+      media="(min-width: 721px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="assets/fonts/inter-latin.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="assets/fonts/playfair-display-latin.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.min.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -26,7 +50,13 @@
     <header class="site-header" aria-label="Site header">
       <div class="container nav-shell">
         <a class="brand" href="#top" aria-label="Citadel Fitness home">
-          <img src="assets/logo.png" alt="Citadel Fitness logo" />
+          <img
+            src="assets/logo-96.webp"
+            alt="Citadel Fitness logo"
+            width="96"
+            height="107"
+            decoding="async"
+          />
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#about">About</a>
@@ -97,13 +127,33 @@
             </article>
 
             <figure class="image-panel about-image">
-              <img
-                src="assets/phil.jpg"
-                alt="Phil, fitness and mindset coach"
-                width="840"
-                height="840"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="
+                    assets/phil-560.avif 560w,
+                    assets/phil-840.avif 840w
+                  "
+                  sizes="(min-width: 981px) 544px, calc(100vw - 36px)"
+                />
+                <source
+                  type="image/webp"
+                  srcset="
+                    assets/phil-560.webp 560w,
+                    assets/phil-840.webp 840w
+                  "
+                  sizes="(min-width: 981px) 544px, calc(100vw - 36px)"
+                />
+                <img
+                  src="assets/phil-840.jpg"
+                  alt="Phil, fitness and mindset coach"
+                  width="840"
+                  height="840"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+              </picture>
             </figure>
           </div>
         </div>
@@ -288,7 +338,13 @@
               href="#top"
               aria-label="Citadel Fitness home"
             >
-              <img src="assets/logo.png" alt="" width="48" height="48" />
+              <img
+                src="assets/logo-96.webp"
+                alt=""
+                width="96"
+                height="107"
+                decoding="async"
+              />
               <span>Citadel Fitness</span>
             </a>
             <p>Structure, strength, and accountability for real life.</p>
@@ -351,6 +407,9 @@
                 alt="Placeholder QR code for the Citadel Fitness Google Review page"
                 width="140"
                 height="140"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
               />
             </div>
           </aside>
@@ -365,6 +424,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
   </body>
 </html>
