@@ -354,7 +354,8 @@ h3 {
 
 .brand img {
   width: auto;
-  height: 42px;
+  height: 50px;
+  max-width: 250px;
   filter: brightness(0) invert(1);
   object-fit: contain;
 }
@@ -979,7 +980,6 @@ h3 {
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
   color: var(--cf-cream);
   font-size: 18px;
   font-weight: 800;
@@ -987,8 +987,8 @@ h3 {
 }
 
 .footer-logo img {
-  width: 42px;
-  height: 42px;
+  width: 180px;
+  height: auto;
   filter: brightness(0) invert(1);
   object-fit: contain;
 }
@@ -1245,7 +1245,8 @@ h3 {
   }
 
   .brand img {
-    height: 34px;
+    height: 36px;
+    max-width: 48vw;
   }
 
   h1 {
@@ -1335,6 +1336,10 @@ h3 {
   .footer-contact,
   .footer-review-card {
     padding: 20px;
+  }
+
+  .footer-logo img {
+    width: 150px;
   }
 
   .footer-review-card {
