@@ -1,0 +1,15 @@
+{
+  "crawledUrls": 1,
+  "indexableUrls": 1,
+  "redirects": 0,
+  "notFound": 0,
+  "serverErrors": 0,
+  "brokenLinks": 0,
+  "missingCanonical": 0,
+  "nonSelfCanonical": 1,
+  "missingDescriptions": 0,
+  "missingOpenGraph": 0,
+  "missingTwitter": 0,
+  "missingStructuredData": 0,
+  "imagesMissingAlt": 0
+}

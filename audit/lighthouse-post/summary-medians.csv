@@ -1,0 +1,3 @@
+url,formFactor,runs,performance,accessibility,best-practices,seo,first-contentful-paint,largest-contentful-paint,total-blocking-time,cumulative-layout-shift,speed-index,majorOpportunities
+http://127.0.0.1:4173/,desktop,3,100,100,100,100,306.505686831088,664.5056868310878,0,0,307.4954,
+http://127.0.0.1:4173/,mobile,3,93,100,100,100,1135.2605,3155.4615,30,0,1135.2605,
