@@ -1,43 +1,49 @@
+const header = document.querySelector(".site-header");
+const year = document.querySelector("#copyright-year");
+const revealItems = document.querySelectorAll(".reveal");
+const navLinks = document.querySelectorAll(
+  '.nav-links > a:not(.button)[href^="#"]',
+);
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
-const header = document.querySelector(".site-header");
-const internalLinks = document.querySelectorAll('a[href^="#"]');
-const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
-const year = document.querySelector("#copyright-year");
 
-internalLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const targetId = link.getAttribute("href");
-    const target = targetId ? document.querySelector(targetId) : null;
-
-    if (!target) {
-      return;
-    }
-
-    event.preventDefault();
-    target.scrollIntoView({
-      behavior: prefersReducedMotion ? "auto" : "smooth",
-      block: "start",
-    });
-  });
-});
-
-const toggleHeaderState = () => {
-  if (!header) {
-    return;
+const updateHeader = () => {
+  if (header) {
+    header.classList.toggle("is-scrolled", window.scrollY > 16);
   }
-
-  header.classList.toggle("is-scrolled", window.scrollY > 24);
 };
 
 if (header) {
-  window.addEventListener("scroll", toggleHeaderState, { passive: true });
-  toggleHeaderState();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
 }
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
+}
+
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.12,
+    },
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
 }
 
 const navTargets = Array.from(navLinks)
@@ -47,26 +53,24 @@ const navTargets = Array.from(navLinks)
   })
   .filter(Boolean);
 
-const setActiveNavLink = (id) => {
-  navTargets.forEach(({ link, target }) => {
-    link.classList.toggle("is-active", target.id === id);
-  });
-};
-
-if ("IntersectionObserver" in window && navTargets.length) {
+if (navTargets.length && "IntersectionObserver" in window) {
   const navObserver = new IntersectionObserver(
     (entries) => {
-      const visibleEntry = entries
+      const visible = entries
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-      if (visibleEntry) {
-        setActiveNavLink(visibleEntry.target.id);
+      if (!visible) {
+        return;
       }
+
+      navTargets.forEach(({ link, target }) => {
+        link.classList.toggle("is-active", target === visible.target);
+      });
     },
     {
-      rootMargin: "-24% 0px -56% 0px",
-      threshold: [0.12, 0.24, 0.4],
+      rootMargin: "-28% 0px -58% 0px",
+      threshold: [0.08, 0.2, 0.4],
     },
   );
 
