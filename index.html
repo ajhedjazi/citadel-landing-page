@@ -61,7 +61,7 @@
           <a href="#results">Results</a>
           <a href="#founder">Phil</a>
           <a
-            class="button button-small"
+            class="button button-accent button-small"
             href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +79,7 @@
             <a href="#results">Results</a>
             <a href="#founder">Phil</a>
             <a
-              class="button button-small"
+              class="button button-accent button-small"
               href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
               target="_blank"
               rel="noopener noreferrer"
@@ -209,7 +209,7 @@
                 Your progress should become something you own&mdash;not something
                 you rent.
               </p>
-              <a class="button button-primary" href="#method">How Rebirth Works</a>
+              <a class="button button-outline-dark" href="#method">How Rebirth Works</a>
             </div>
           </div>
 
@@ -296,48 +296,80 @@
             <h2 id="contact-title">Start a conversation.</h2>
           </div>
 
-          <article class="contact-method reveal">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7.5 4h3l1.4 4-2 1.5a14 14 0 0 0 4.6 4.6l1.5-2 4 1.4v3c0 1.1-.9 2-2 2C10.8 18.5 5.5 13.2 5.5 6c0-1.1.9-2 2-2Z"></path>
-            </svg>
-            <h3>Call or WhatsApp</h3>
-            <p>The fastest way to get in touch.</p>
-            <a class="contact-link" href="tel:+447481504811">07481&nbsp;504811</a>
+          <div class="contact-cards">
             <a
-              class="contact-secondary"
+              class="contact-method reveal"
+              href="tel:+447481504811"
+              aria-label="Call Phil on 07481&nbsp;504811"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.5 4h3l1.4 4-2 1.5a14 14 0 0 0 4.6 4.6l1.5-2 4 1.4v3c0 1.1-.9 2-2 2C10.8 18.5 5.5 13.2 5.5 6c0-1.1.9-2 2-2Z"></path>
+                </svg>
+              </span>
+              <h3>Phone</h3>
+              <p>The fastest way to get in touch.</p>
+              <span class="contact-action">
+                07481&nbsp;504811 <span aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+
+            <a
+              class="contact-method reveal"
+              href="mailto:philshawpt@gmail.com"
+              aria-label="Email Phil at philshawpt@gmail.com"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="1"></rect>
+                  <path d="m4 7 8 6 8-6"></path>
+                </svg>
+              </span>
+              <h3>Email</h3>
+              <p>Send Phil an email.</p>
+              <span class="contact-action">
+                philshawpt@gmail.com <span aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+
+            <a
+              class="contact-method contact-method-whatsapp reveal"
               href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
               target="_blank"
               rel="noopener noreferrer"
-              >Message Phil on WhatsApp</a
+              aria-label="Message Phil on WhatsApp (opens in a new tab)"
             >
-          </article>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+                </svg>
+              </span>
+              <h3>WhatsApp</h3>
+              <p>Message Phil directly.</p>
+              <span class="contact-action">
+                Start a conversation <span aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
 
-          <article class="contact-method reveal">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="1"></rect>
-              <path d="m4 7 8 6 8-6"></path>
-            </svg>
-            <h3>Email</h3>
-            <p>Send Phil an email.</p>
-            <a class="contact-link" href="mailto:philshawpt@gmail.com"
-              >philshawpt@gmail.com</a
-            >
-          </article>
-
-          <article class="contact-method reveal">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path>
-            </svg>
-            <h3>Google Reviews</h3>
-            <p>See what people have shared.</p>
             <a
-              class="contact-link"
+              class="contact-method reveal"
               href="https://share.google/rwGom8G0Z2JJcuaQW"
               target="_blank"
               rel="noopener noreferrer"
-              >View Google Reviews</a
+              aria-label="View Google Reviews (opens in a new tab)"
             >
-          </article>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"></path>
+                </svg>
+              </span>
+              <h3>Google Reviews</h3>
+              <p>See what people have shared.</p>
+              <span class="contact-action">
+                View Google Reviews <span aria-hidden="true">&rarr;</span>
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -367,8 +399,7 @@
             aria-label="What lasting progress looks like"
           >
             <!-- TEMPORARY DEMO CARD 1: Replace before publishing client results.
-                 Temporary images: demo-result-james-before.* (Pexels 4164467) and
-                 demo-result-james-after.* (Pexels 4164841).
+                 Neutral panels intentionally replace mismatched stock people.
                  Demo copy: "DEMO PLACEHOLDER - NOT A CLIENT RESULT",
                  fictional "James - 16 weeks", and "Improved strength, a steadier
                  routine and more confidence in the gym." -->
@@ -380,38 +411,24 @@
               aria-label="1 of 3: James demo placeholder"
             >
               <div class="transformation-pair">
-                <figure class="transformation-photo">
-                  <picture>
-                    <source
-                      srcset="assets/demo-result-james-before.webp"
-                      type="image/webp"
-                    >
-                    <img
-                      src="assets/demo-result-james-before.jpg"
-                      alt="Demo stock image of a man pausing during a gym session"
-                      width="720"
-                      height="900"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                  </picture>
+                <figure
+                  class="transformation-photo transformation-placeholder"
+                  aria-label="Before image pending &mdash; neutral demo placeholder"
+                >
+                  <span class="placeholder-visual" aria-hidden="true">
+                    <span class="placeholder-shape"></span>
+                    <span class="placeholder-text">Demo image pending</span>
+                  </span>
                   <figcaption>Before</figcaption>
                 </figure>
-                <figure class="transformation-photo">
-                  <picture>
-                    <source
-                      srcset="assets/demo-result-james-after.webp"
-                      type="image/webp"
-                    >
-                    <img
-                      src="assets/demo-result-james-after.jpg"
-                      alt="Demo stock image of the same man lifting dumbbells"
-                      width="720"
-                      height="900"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                  </picture>
+                <figure
+                  class="transformation-photo transformation-placeholder"
+                  aria-label="After image pending &mdash; neutral demo placeholder"
+                >
+                  <span class="placeholder-visual" aria-hidden="true">
+                    <span class="placeholder-shape"></span>
+                    <span class="placeholder-text">Demo image pending</span>
+                  </span>
                   <figcaption>After</figcaption>
                 </figure>
               </div>
@@ -590,12 +607,12 @@
             <source
               type="image/avif"
               srcset="assets/phil-560.avif 560w, assets/phil-840.avif 840w"
-              sizes="(min-width: 900px) 54vw, 100vw"
+              sizes="(min-width: 1440px) 50vw, (min-width: 981px) 720px, 100vw"
             >
             <source
               type="image/webp"
               srcset="assets/phil-560.webp 560w, assets/phil-840.webp 840w"
-              sizes="(min-width: 900px) 54vw, 100vw"
+              sizes="(min-width: 1440px) 50vw, (min-width: 981px) 720px, 100vw"
             >
             <img
               src="assets/phil-840.jpg"
@@ -735,8 +752,8 @@
               <img
                 src="assets/google-review-qr.png"
                 alt="Scan to leave a Google Review"
-                width="200"
-                height="200"
+                width="132"
+                height="132"
                 loading="lazy"
                 decoding="async"
               >
@@ -754,15 +771,15 @@
 
       <div class="container footer-cta reveal">
         <div>
-          <p class="footer-cta-kicker">Your next step</p>
-          <h2>Ready to make a change?</h2>
+          <p class="footer-cta-kicker">Questions are welcome</p>
+          <h2>Prefer to chat first?</h2>
         </div>
         <a
-          class="button button-accent"
-          href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
+          class="button button-ghost"
+          href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20chat%20about%20coaching."
           target="_blank"
           rel="noopener noreferrer"
-          >Book a consultation</a
+          >Message Phil on WhatsApp</a
         >
       </div>
 

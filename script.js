@@ -5,6 +5,7 @@ const navLinks = document.querySelectorAll(
   '.nav-links > a:not(.button)[href^="#"]',
 );
 const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuSummary = mobileMenu?.querySelector("summary");
 const floatingActions = document.querySelector("[data-floating-actions]");
 const backToTopButton = document.querySelector("[data-back-to-top]");
 const prefersReducedMotion = window.matchMedia(
@@ -34,8 +35,9 @@ if (mobileMenu) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && mobileMenu.open) {
       mobileMenu.open = false;
+      mobileMenuSummary?.focus();
     }
   });
 
@@ -83,36 +85,53 @@ if (backToTopButton) {
       top: 0,
       behavior: prefersReducedMotion ? "auto" : "smooth",
     });
+
+    const heroTitle = document.querySelector("#hero-title");
+
+    if (heroTitle) {
+      heroTitle.tabIndex = -1;
+      heroTitle.focus({ preventScroll: true });
+    }
   });
 
   window.addEventListener("scroll", updateBackToTop, { passive: true });
   updateBackToTop();
 }
 
-if (floatingActions && "IntersectionObserver" in window) {
-  const visibleBlockers = new Set();
-  const floatingBlockers = document.querySelectorAll(
-    ".gallery-controls, .site-footer",
+if (floatingActions) {
+  const floatingCollisionTargets = document.querySelectorAll(
+    ".hero, .benefit-item, .intro-heading, .intro-copy, .method-step, .service-copy, .contact-heading, .contact-method, .results-heading, .result-card, .gallery-controls, .founder-copy, .consultation-shell, .site-footer",
   );
-  const floatingObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          visibleBlockers.add(entry.target);
-        } else {
-          visibleBlockers.delete(entry.target);
+  let floatingFrame = 0;
+
+  const updateFloatingActions = () => {
+    window.cancelAnimationFrame(floatingFrame);
+    floatingFrame = window.requestAnimationFrame(() => {
+      const floatingRect = floatingActions.getBoundingClientRect();
+      const clearance = 12;
+      const isBlocked = Array.from(floatingCollisionTargets).some((target) => {
+        const targetRect = target.getBoundingClientRect();
+
+        if (targetRect.width === 0 || targetRect.height === 0) {
+          return false;
         }
+
+        return (
+          targetRect.bottom > floatingRect.top - clearance &&
+          targetRect.top < floatingRect.bottom + clearance &&
+          targetRect.right > floatingRect.left - clearance &&
+          targetRect.left < floatingRect.right + clearance
+        );
       });
 
-      floatingActions.classList.toggle(
-        "is-suppressed",
-        visibleBlockers.size > 0,
-      );
-    },
-    { threshold: 0.08 },
-  );
+      floatingActions.classList.toggle("is-suppressed", isBlocked);
+    });
+  };
 
-  floatingBlockers.forEach((blocker) => floatingObserver.observe(blocker));
+  window.addEventListener("scroll", updateFloatingActions, { passive: true });
+  window.addEventListener("resize", updateFloatingActions, { passive: true });
+  window.addEventListener("load", updateFloatingActions, { once: true });
+  updateFloatingActions();
 }
 
 const navTargets = Array.from(
