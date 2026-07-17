@@ -5,6 +5,8 @@ const navLinks = document.querySelectorAll(
   '.nav-links > a:not(.button)[href^="#"]',
 );
 const mobileMenu = document.querySelector(".mobile-menu");
+const floatingActions = document.querySelector("[data-floating-actions]");
+const backToTopButton = document.querySelector("[data-back-to-top]");
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
@@ -36,11 +38,18 @@ if (mobileMenu) {
       mobileMenu.open = false;
     }
   });
+
+  document.addEventListener("click", (event) => {
+    if (!mobileMenu.contains(event.target)) {
+      mobileMenu.open = false;
+    }
+  });
 }
 
 if (prefersReducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {
+  document.documentElement.classList.add("reveal-ready");
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -59,6 +68,51 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+if (backToTopButton) {
+  const updateBackToTop = () => {
+    const isVisible = window.scrollY >= 600;
+    backToTopButton.classList.toggle("is-visible", isVisible);
+    backToTopButton.setAttribute("aria-hidden", String(!isVisible));
+    backToTopButton.tabIndex = isVisible ? 0 : -1;
+  };
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  });
+
+  window.addEventListener("scroll", updateBackToTop, { passive: true });
+  updateBackToTop();
+}
+
+if (floatingActions && "IntersectionObserver" in window) {
+  const visibleBlockers = new Set();
+  const floatingBlockers = document.querySelectorAll(
+    ".gallery-controls, .site-footer",
+  );
+  const floatingObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleBlockers.add(entry.target);
+        } else {
+          visibleBlockers.delete(entry.target);
+        }
+      });
+
+      floatingActions.classList.toggle(
+        "is-suppressed",
+        visibleBlockers.size > 0,
+      );
+    },
+    { threshold: 0.08 },
+  );
+
+  floatingBlockers.forEach((blocker) => floatingObserver.observe(blocker));
 }
 
 const navTargets = Array.from(
@@ -111,6 +165,7 @@ if (gallery) {
   const nextButton = gallery.querySelector("[data-gallery-next]");
   const dots = Array.from(gallery.querySelectorAll("[data-gallery-dot]"));
   let activeIndex = 0;
+  let maxStartIndex = cards.length - 1;
   let scrollFrame = 0;
 
   const getTrackPadding = () =>
@@ -136,10 +191,33 @@ if (gallery) {
       }
     });
 
-    return nearestIndex;
+    return Math.min(nearestIndex, maxStartIndex);
+  };
+
+  const updateVisibleCards = () => {
+    const firstCard = cards[0];
+
+    if (!firstCard) {
+      maxStartIndex = 0;
+      return;
+    }
+
+    const styles = window.getComputedStyle(track);
+    const gap = Number.parseFloat(styles.columnGap) || 0;
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const visibleCards = Math.max(
+      1,
+      Math.floor((track.clientWidth + gap) / (cardWidth + gap)),
+    );
+
+    maxStartIndex = Math.max(0, cards.length - visibleCards);
+    dots.forEach((dot, index) => {
+      dot.hidden = index > maxStartIndex;
+    });
   };
 
   const updateGallery = () => {
+    updateVisibleCards();
     activeIndex = getNearestIndex();
 
     dots.forEach((dot, index) => {
@@ -151,7 +229,7 @@ if (gallery) {
     });
 
     previousButton.disabled = activeIndex === 0;
-    nextButton.disabled = activeIndex === cards.length - 1;
+    nextButton.disabled = activeIndex === maxStartIndex;
   };
 
   const scheduleUpdate = () => {
@@ -160,7 +238,8 @@ if (gallery) {
   };
 
   const scrollToCard = (index) => {
-    const nextIndex = Math.max(0, Math.min(index, cards.length - 1));
+    updateVisibleCards();
+    const nextIndex = Math.max(0, Math.min(index, maxStartIndex));
 
     track.scrollTo({
       left: getCardLeft(cards[nextIndex]) - getTrackPadding(),

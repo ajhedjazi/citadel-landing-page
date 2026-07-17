@@ -5,3 +5,16 @@ Service: https://www.pexels.com/photo/woman-having-training-session-in-the-gym-4
 Licence: https://www.pexels.com/legal-pages/license/
 
 Both photographs were downloaded locally and resized/cropped for this website.
+
+Temporary Results carousel demo images
+
+James before: https://www.pexels.com/photo/4164467/
+James after: https://www.pexels.com/photo/man-lifting-dumbbells-4164841/
+Maya before: https://www.pexels.com/photo/4587372/
+Maya after: https://www.pexels.com/photo/4587364/
+Daniel before: https://www.pexels.com/photo/an-elderly-man-working-out-6922152/
+Daniel after: https://www.pexels.com/photo/6922181/
+
+These temporary stock photographs are demo placeholders only. The people shown
+are not Rebirth Arete clients and the fictional names, timeframes and captions in
+the Results carousel do not describe their real experiences.

@@ -43,7 +43,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" aria-label="Site header">
-      <div class="nav-shell">
+      <div class="container nav-shell">
         <a class="brand" href="#top" aria-label="Rebirth Aret&eacute; home">
           <img
             src="assets/rebirth-arete-full-logo.png"
@@ -146,7 +146,7 @@
 
       <section class="benefits-strip" aria-label="Rebirth coaching benefits">
         <div class="container benefits-grid">
-          <div class="benefit-item">
+          <div class="benefit-item reveal">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 18c2.4-3.8 4.8-5.7 7.2-5.7 2.5 0 4.7 1.9 6.8 5.7"></path>
               <circle cx="12" cy="7" r="3"></circle>
@@ -157,7 +157,7 @@
             </div>
           </div>
 
-          <div class="benefit-item">
+          <div class="benefit-item reveal">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 12h16M7 8v8M17 8v8M3 10v4M21 10v4"></path>
             </svg>
@@ -167,7 +167,7 @@
             </div>
           </div>
 
-          <div class="benefit-item">
+          <div class="benefit-item reveal">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <rect x="5" y="3" width="14" height="18" rx="1"></rect>
               <path d="M9 7h6M10 17h4"></path>
@@ -277,7 +277,6 @@
               <li>Lose weight</li>
               <li>Build strength</li>
               <li>Understand training and nutrition</li>
-              <li>Create habits that last</li>
             </ul>
             <a
               class="button button-accent"
@@ -354,7 +353,7 @@
         </div>
 
         <div
-          class="results-gallery"
+          class="container results-gallery"
           data-results-gallery
           role="group"
           aria-roledescription="carousel"
@@ -367,85 +366,195 @@
             tabindex="0"
             aria-label="What lasting progress looks like"
           >
+            <!-- TEMPORARY DEMO CARD 1: Replace before publishing client results.
+                 Temporary images: demo-result-james-before.* (Pexels 4164467) and
+                 demo-result-james-after.* (Pexels 4164841).
+                 Demo copy: "DEMO PLACEHOLDER - NOT A CLIENT RESULT",
+                 fictional "James - 16 weeks", and "Improved strength, a steadier
+                 routine and more confidence in the gym." -->
             <article
-              class="result-card"
+              class="result-card reveal"
               data-result-card
               role="group"
               aria-roledescription="slide"
-              aria-label="1 of 4: Clarity"
+              aria-label="1 of 3: James demo placeholder"
             >
-              <span>01</span>
+              <div class="transformation-pair">
+                <figure class="transformation-photo">
+                  <picture>
+                    <source
+                      srcset="assets/demo-result-james-before.webp"
+                      type="image/webp"
+                    >
+                    <img
+                      src="assets/demo-result-james-before.jpg"
+                      alt="Demo stock image of a man pausing during a gym session"
+                      width="720"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </picture>
+                  <figcaption>Before</figcaption>
+                </figure>
+                <figure class="transformation-photo">
+                  <picture>
+                    <source
+                      srcset="assets/demo-result-james-after.webp"
+                      type="image/webp"
+                    >
+                    <img
+                      src="assets/demo-result-james-after.jpg"
+                      alt="Demo stock image of the same man lifting dumbbells"
+                      width="720"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </picture>
+                  <figcaption>After</figcaption>
+                </figure>
+              </div>
               <div class="result-card-copy">
-                <p class="result-kicker">What lasting progress looks like</p>
-                <h3>Clarity</h3>
+                <p class="demo-disclosure">
+                  Demo placeholder &mdash; not a client result
+                </p>
+                <h3>James &mdash; 16 weeks</h3>
                 <p>
-                  You understand what works for you, why it works and what to do
-                  when life changes.
+                  Improved strength, a steadier routine and more confidence in
+                  the gym.
                 </p>
               </div>
             </article>
 
+            <!-- TEMPORARY DEMO CARD 2: Replace before publishing client results.
+                 Temporary images: demo-result-maya-before.* (Pexels 4587372) and
+                 demo-result-maya-after.* (Pexels 4587364).
+                 Demo copy: "DEMO PLACEHOLDER - NOT A CLIENT RESULT",
+                 fictional "Maya - 20 weeks", and "More consistent training,
+                 stronger movement and confidence that carries into everyday life." -->
             <article
-              class="result-card"
+              class="result-card reveal"
               data-result-card
               role="group"
               aria-roledescription="slide"
-              aria-label="2 of 4: Consistency"
+              aria-label="2 of 3: Maya demo placeholder"
             >
-              <span>02</span>
+              <div class="transformation-pair">
+                <figure class="transformation-photo">
+                  <picture>
+                    <source
+                      srcset="assets/demo-result-maya-before.webp"
+                      type="image/webp"
+                    >
+                    <img
+                      src="assets/demo-result-maya-before.jpg"
+                      alt="Demo stock image of a woman training with dumbbells"
+                      width="720"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </picture>
+                  <figcaption>Before</figcaption>
+                </figure>
+                <figure class="transformation-photo">
+                  <picture>
+                    <source
+                      srcset="assets/demo-result-maya-after.webp"
+                      type="image/webp"
+                    >
+                    <img
+                      src="assets/demo-result-maya-after.jpg"
+                      alt="Demo stock image of the same woman completing a squat"
+                      width="720"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </picture>
+                  <figcaption>After</figcaption>
+                </figure>
+              </div>
               <div class="result-card-copy">
-                <p class="result-kicker">What lasting progress looks like</p>
-                <h3>Consistency</h3>
+                <p class="demo-disclosure">
+                  Demo placeholder &mdash; not a client result
+                </p>
+                <h3>Maya &mdash; 20 weeks</h3>
                 <p>
-                  Your routine bends around busy weeks without disappearing the
-                  moment conditions are imperfect.
+                  More consistent training, stronger movement and confidence
+                  that carries into everyday life.
                 </p>
               </div>
             </article>
 
+            <!-- TEMPORARY DEMO CARD 3: Replace before publishing client results.
+                 Temporary images: demo-result-daniel-before.* (Pexels 6922152) and
+                 demo-result-daniel-after.* (Pexels 6922181).
+                 Demo copy: "DEMO PLACEHOLDER - NOT A CLIENT RESULT",
+                 fictional "Daniel - 12 weeks", and "A practical routine built around
+                 strength, consistency and growing confidence." -->
             <article
-              class="result-card"
+              class="result-card reveal"
               data-result-card
               role="group"
               aria-roledescription="slide"
-              aria-label="3 of 4: Confidence"
+              aria-label="3 of 3: Daniel demo placeholder"
             >
-              <span>03</span>
-              <div class="result-card-copy">
-                <p class="result-kicker">What lasting progress looks like</p>
-                <h3>Confidence</h3>
-                <p>
-                  You can make training and nutrition decisions without
-                  outsourcing trust in yourself.
-                </p>
+              <div class="transformation-pair">
+                <figure class="transformation-photo">
+                  <picture>
+                    <source
+                      srcset="assets/demo-result-daniel-before.webp"
+                      type="image/webp"
+                    >
+                    <img
+                      src="assets/demo-result-daniel-before.jpg"
+                      alt="Demo stock image of an older man training on an exercise bike"
+                      width="720"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </picture>
+                  <figcaption>Before</figcaption>
+                </figure>
+                <figure class="transformation-photo">
+                  <picture>
+                    <source
+                      srcset="assets/demo-result-daniel-after.webp"
+                      type="image/webp"
+                    >
+                    <img
+                      src="assets/demo-result-daniel-after.jpg"
+                      alt="Demo stock image of the same older man lifting dumbbells"
+                      width="720"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  </picture>
+                  <figcaption>After</figcaption>
+                </figure>
               </div>
-            </article>
-
-            <article
-              class="result-card"
-              data-result-card
-              role="group"
-              aria-roledescription="slide"
-              aria-label="4 of 4: Independence"
-            >
-              <span>04</span>
               <div class="result-card-copy">
-                <p class="result-kicker">What lasting progress looks like</p>
-                <h3>Independence</h3>
+                <p class="demo-disclosure">
+                  Demo placeholder &mdash; not a client result
+                </p>
+                <h3>Daniel &mdash; 12 weeks</h3>
                 <p>
-                  The result stays because the knowledge, habits and standards
-                  now belong to you.
+                  A practical routine built around strength, consistency and
+                  growing confidence.
                 </p>
               </div>
             </article>
           </div>
 
-          <div class="container gallery-controls">
+          <div class="gallery-controls">
             <div class="gallery-dots" role="group" aria-label="Choose a result">
-              <button type="button" data-gallery-dot="0" aria-label="Show result 1: Clarity"></button>
-              <button type="button" data-gallery-dot="1" aria-label="Show result 2: Consistency"></button>
-              <button type="button" data-gallery-dot="2" aria-label="Show result 3: Confidence"></button>
-              <button type="button" data-gallery-dot="3" aria-label="Show result 4: Independence"></button>
+              <button type="button" data-gallery-dot="0" aria-label="Show demo result 1: James"></button>
+              <button type="button" data-gallery-dot="1" aria-label="Show demo result 2: Maya"></button>
+              <button type="button" data-gallery-dot="2" aria-label="Show demo result 3: Daniel"></button>
             </div>
             <div class="gallery-buttons">
               <button
@@ -499,25 +608,27 @@
           </picture>
         </figure>
 
-        <div class="founder-copy reveal">
-          <p class="eyebrow">Meet the Founder</p>
-          <h2 id="founder-title">Get to know Phil.</h2>
-          <p class="founder-lead">
-            Phil&rsquo;s own experience with weight loss shaped the way he coaches.
-          </p>
-          <p>
-            Rebirth rejects dependency-based coaching. The aim is to help people
-            understand what works for them, build standards they respect and
-            develop habits that can survive real life.
-          </p>
-          <p>
-            Coaching should empower people to continue independently. It is a
-            process of changing the body, but also identity, decisions and the way
-            you show up when nobody is watching.
-          </p>
-          <p class="founder-principle">
-            Build the body. Learn the process. Keep the result.
-          </p>
+        <div class="container founder-inner">
+          <div class="founder-copy reveal">
+            <p class="eyebrow">Meet the Founder</p>
+            <h2 id="founder-title">Get to know Phil.</h2>
+            <p class="founder-lead">
+              Phil&rsquo;s own experience with weight loss shaped the way he coaches.
+            </p>
+            <p>
+              Rebirth rejects dependency-based coaching. The aim is to help people
+              understand what works for them, build standards they respect and
+              develop habits that can survive real life.
+            </p>
+            <p>
+              Coaching should empower people to continue independently. It is a
+              process of changing the body, but also identity, decisions and the way
+              you show up when nobody is watching.
+            </p>
+            <p class="founder-principle">
+              Build the body. Learn the process. Keep the result.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -547,9 +658,36 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-shell">
-        <div class="footer-intro">
+    <div class="floating-actions" data-floating-actions>
+      <button
+        class="back-to-top"
+        type="button"
+        data-back-to-top
+        aria-label="Back to top"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 15 6-6 6 6"></path>
+        </svg>
+      </button>
+      <a
+        class="floating-whatsapp"
+        href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat to Phil on WhatsApp"
+      >
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+        </svg>
+        <span>Chat to Phil</span>
+      </a>
+    </div>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="container footer-main">
+        <div class="footer-intro reveal">
           <a class="footer-brand" href="#top" aria-label="Rebirth Aret&eacute; home">
             <img
               src="assets/rebirth-arete-full-logo.png"
@@ -562,35 +700,79 @@
           <p>Personal training and online coaching built around independence.</p>
         </div>
 
-        <div class="footer-contact">
+        <nav class="footer-links reveal" aria-label="Footer navigation">
+          <p>Quick links</p>
+          <a href="#top">Home</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#coaching">Coaching</a>
+          <a href="#results">Results</a>
+          <a href="#founder">Phil</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <address class="footer-contact reveal">
           <p>Contact Phil</p>
           <a href="mailto:philshawpt@gmail.com">philshawpt@gmail.com</a>
           <a href="tel:+447481504811">07481&nbsp;504811</a>
-        </div>
-
-        <div class="footer-review">
-          <p>Google Reviews</p>
           <a
-            class="review-qr"
-            href="https://share.google/rwGom8G0Z2JJcuaQW"
+            href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Scan or open Google Review page"
+            >WhatsApp Phil</a
           >
-            <img
-              src="assets/google-review-qr.png"
-              alt="Scan to leave a Google Review"
-              width="200"
-              height="200"
-              loading="lazy"
-              decoding="async"
-            >
-          </a>
-        </div>
+        </address>
 
-        <p class="copyright">
-          &copy; <span id="copyright-year">2026</span> Rebirth Aret&eacute;.
-        </p>
+        <div class="footer-review reveal">
+          <p>Google Reviews</p>
+          <div class="footer-review-content">
+            <a
+              class="review-qr"
+              href="https://share.google/rwGom8G0Z2JJcuaQW"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Scan or open Google Review page"
+            >
+              <img
+                src="assets/google-review-qr.png"
+                alt="Scan to leave a Google Review"
+                width="200"
+                height="200"
+                loading="lazy"
+                decoding="async"
+              >
+            </a>
+            <a
+              class="footer-review-link"
+              href="https://share.google/rwGom8G0Z2JJcuaQW"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Google Reviews</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-cta reveal">
+        <div>
+          <p class="footer-cta-kicker">Your next step</p>
+          <h2>Ready to make a change?</h2>
+        </div>
+        <a
+          class="button button-accent"
+          href="https://wa.me/447481504811?text=Hi%20Phil%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
+          target="_blank"
+          rel="noopener noreferrer"
+          >Book a consultation</a
+        >
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            &copy; <span id="copyright-year">2026</span> Rebirth Aret&eacute;.
+          </p>
+          <p>Personal training and online coaching in Hull</p>
+        </div>
       </div>
     </footer>
 
